@@ -6,7 +6,7 @@ include/
 lib/
 lib64/
 pip-selfcheck.json
-
+model.h5
 # IDE files
 .vscode/
 .idea/
