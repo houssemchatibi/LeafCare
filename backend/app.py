@@ -4,6 +4,7 @@ import face_recognition_models
 from flask_cors import CORS
 import face_recognition
 from flask_migrate import Migrate
+from routes_model import app as routes_model_app
 
 import numpy as np
 
@@ -15,6 +16,8 @@ migrate = Migrate(app, db)
 
 print("hiiii")
 import routes
+# Register routes from routes_model
+app.register_blueprint(routes_model_app)
 
 if __name__ == '__main__':
     app.run(debug=True)

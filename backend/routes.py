@@ -3,11 +3,11 @@ import base64
 from io import BytesIO
 from PIL import Image
 import face_recognition
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, Blueprint
 from models import db, User 
 import numpy as np
 
-
+app = Blueprint('routes', __name__)
 
 @app.route('/api/register', methods=['POST'])
 def register_user():
