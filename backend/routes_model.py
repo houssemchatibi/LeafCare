@@ -5,7 +5,7 @@ from keras.models import load_model
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 
 # Define a blueprint
-app = Blueprint('routes_model', __name__)
+model_routes = Blueprint('routes_model', __name__)
 
 # Load the model
 model_path = "../model.h5" # Adjust the path if needed
@@ -27,7 +27,7 @@ def getResult(image_path):
     return predictions
 
 # Route for predictions
-@app.route('/api/predict', methods=['GET', 'POST'])
+@model_routes.route('/predict', methods=['GET', 'POST'])
 def upload():
     file_path = "image-asset.jpeg"  # Change this to the correct file path
     if not os.path.exists(file_path):

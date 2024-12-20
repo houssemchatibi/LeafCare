@@ -54,7 +54,7 @@ const Signup = () => {
       <div className="min-h-screen bg-gray-100 mx-auto  py-10 px-8 justify-center items-center">
         <div className="mx-auto max-w-md px-6 py-4 bg-white border-0 shadow-lg rounded-3xl">
           <center>
-            <h1 className="text-2xl font-bold mb-4">Face-Auth</h1>
+            <h1 className="text-2xl font-bold mb-4">LeafCare</h1>
           </center>
           <label className="text-l mb-4">username : </label>
           <input

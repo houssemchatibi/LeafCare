@@ -1,4 +1,3 @@
-from app import app
 import base64
 from io import BytesIO
 from PIL import Image
@@ -7,9 +6,9 @@ from flask import Flask, request, jsonify, Blueprint
 from models import db, User 
 import numpy as np
 
-app = Blueprint('routes', __name__)
+routes_blueprint  = Blueprint('routes', __name__)
 
-@app.route('/api/register', methods=['POST'])
+@routes_blueprint.route('/register', methods=['POST'])
 def register_user():
     data = request.get_json()
     username = data.get('username')
@@ -55,7 +54,7 @@ def register_user():
         return jsonify({"error": str(e)}), 500
 
         
-@app.route('/api/login', methods=['POST'])
+@routes_blueprint.route('/login', methods=['POST'])
 def login_user():
     data = request.get_json()
     username = data.get('username')
